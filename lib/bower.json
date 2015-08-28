@@ -12,6 +12,7 @@
     "angular-route": "~1.4.4",
     "angularfire": "~1.1.2",
     "bootstrap": "~3.3.5",
+    "bootstrap-material-design": "~0.3.0",
     "firebase": "~2.2.9",
     "jquery": "~2.1.4",
     "lodash": "~3.10.1",
