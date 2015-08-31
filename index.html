@@ -13,8 +13,9 @@
 
 <body ng-app="PinterestApp">
 
-
-  <div ng-view></div>
+  <div ng-controller="AuthCtrl">
+    <div id="ngView" ng-hide="myValue" ng-view></div>
+  </div>
 
   <script src="lib/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="lib/bower_components/angular/angular.min.js"></script>
@@ -23,6 +24,7 @@
   <script src="lib/bower_components/firebase/firebase.js"></script>
   <script src="lib/bower_components/angularfire/dist/angularfire.min.js"></script>
   <script src="app/app.js"></script>
+  <script src="app/controllers/auth.js"></script>
   <script src="app/controllers/mainBoard.js"></script>
   <script src="app/factories/getPics.js"></script>
   <script src="app/controllers/pinsNsearch.js"></script>
