@@ -9,17 +9,17 @@
 
 <div class="row">
   <div class="col-md-3" ng-repeat="photo in pins"> 
-    <a href="#" class="thumbnail">
+    <div href="#" class="thumbnail">
       <img class="photo" ng-src="{{photo.imgUrl}}"/>
-    </a>
+    </div>
   </div>
 </div>
 
 
 <div class="row">
   <div class="col-md-3" ng-repeat="photo in photos"> 
-    <a href="#" class="thumbnail"  ng-click="pinIt(photo)">
+    <div href="#" class="thumbnail"  ng-click="pinIt(photo)">
       <img class="photo" ng-src="{{photo.url_o}}"/>
-    </a>
+    </div>
   </div>
 </div>
