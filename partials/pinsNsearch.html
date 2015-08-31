@@ -2,10 +2,19 @@
   <div class="form-group">
     <input type="text" class="form-control" placeholder="Search" ng-model="input.url">
   </div>
-  <button type="button" ng-click="click()"class="btn btn-default">Submit</button>
+  <button type="button" class="btn btn-default" ng-click="click()">Search</button>
+  <button type="button" class="btn btn-default navbar-btn">Pins</button>
 </form>
-<div id="results">
+
+
+<div class="row">
+  <div class="col-md-3" ng-repeat="photo in pins"> 
+    <a href="#" class="thumbnail">
+      <img class="photo" ng-src="{{photo.imgUrl}}"/>
+    </a>
+  </div>
 </div>
+
 
 <div class="row">
   <div class="col-md-3" ng-repeat="photo in photos"> 

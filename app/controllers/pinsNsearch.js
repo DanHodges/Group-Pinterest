@@ -6,8 +6,6 @@ app.controller("pinsNsearch", ["$scope","$firebaseArray", "getPics", function($s
 		url: ''
 	};
 
-	$scope.photos = [];
-
 	$scope.pinIt = function(photo) {
 		var pinItem = {
 			imgUrl: photo.url_o,
@@ -20,6 +18,7 @@ app.controller("pinsNsearch", ["$scope","$firebaseArray", "getPics", function($s
 	};
 
 	$scope.click = function () {
+		$scope.photos = [];
 		var url = $scope.input.url;
 		getPics.getPics(url).then(
 			function(data) {
