@@ -1,3 +1,13 @@
-var app = angular.module("PinterestApp", ["ngRoute", "angular.filter", "firebase"]);
+var app = angular.module("PinterestApp", ["ngRoute", "firebase"]);
 
-
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/', {
+        templateUrl: 'partials/pinsNsearch.html',
+        controller: 'pinsNsearch'
+      }).
+      otherwise({
+        redirectTo: '/'
+      });
+  }]);
