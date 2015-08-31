@@ -6,17 +6,21 @@
         <span class="icon-bar"></span>
     </button>  
   </div>
-  <select ng-model="catSelector"> <!-- ng-options= "pin.cat for pin in pins" -->> 
-		<option>A</option>
-		<option>B</option>
-		<option>C</option>
-	</select>
+  
+	
+	  
 
-  <div class="navbar-collapse collapse navbar-warning-collapse">
+  <span class="navbar-collapse collapse navbar-warning-collapse">
     <form class="navbar-form navbar-left">
+	    <select ng-model="catSelector"> <!-- ng-options= "pin.cat for pin in pins" -->
+				<option>A</option>
+				<option>B</option>
+				<option>C</option>
+			</select>
       <input type="text" class="form-control col-xs-8" placeholder="Search">
     </form>
-  </div>
+  </span>
+
 </div>
 
 

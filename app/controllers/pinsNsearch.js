@@ -9,6 +9,6 @@ app.controller("pinsNsearch", ["$scope", "getPics", function($scope, getPics){
 		getPics.getPics(url).then(
 			function(data){
 				console.log("data", data);
-			})
-	}
+			});
+	};
 }]);
