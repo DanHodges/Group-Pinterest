@@ -1,37 +1,33 @@
-<div class="navbar navbar-warning">
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-warning-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </button>  
+<div class = "container">
+  <div class="navbar navbar-warning">
+    <div class="navbar-header">
+      <form class="navbar-form navbar-left" role="search">
+       
+        <button type="button" ng-click= "changeView(pinsNsearch)"class="btn btn-default">New Search</button>
+      </form>
+    </div>
+    <span class="navbar-collapse collapse navbar-warning-collapse">
+      <form class="navbar-form navbar-left">
+        <select ng-model="catSelector"> <!-- ng-options= "pin.cat for pin in pins" -->
+          <option>Category1</option>
+          <option>Category2</option>
+          <option>Category3</option>
+        </select>
+        <input class = "filterText" type = "text" placeholder = "Filter Categories"/>
+      </form>
+    </span>
+    <div id="results">
+    </div>
   </div>
-  <span class="navbar-collapse collapse navbar-warning-collapse">
-    <form class="navbar-form navbar-left">
-	    <select ng-model="catSelector"> <!-- ng-options= "pin.cat for pin in pins" -->
-				<option>A</option>
-				<option>B</option>
-				<option>C</option>
-			</select>
-      <input type="text" class="form-control col-xs-8" placeholder="Search">
-    </form>
-  </span>
-</div>
 
-<form class="navbar-form navbar-left" role="search">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search" ng-model="input.url">
-  </div>
-  <button type="button" ng-click="click()"class="btn btn-default">Submit</button>
-</form>
-<div id="results">
-</div>
-
+</div> <!-- close container -->
 <div class="row">
   <div class="col-md-3" ng-repeat="photo in pins"> 
     <a href="#" class="thumbnail">
       <img class="photo" ng-src="{{photo.imgUrl}}"/>
     </a>
+  <div class = "caption" ng-repeat= "caption in pins"> {{pins.caption}}</div>
+  <div class ="category" ng-repeat= "category in pins"> {{pins.cat}}</div>
   </div>
 </div>
 

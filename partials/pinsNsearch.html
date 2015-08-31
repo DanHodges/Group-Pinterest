@@ -1,20 +1,23 @@
-<form class="navbar-form navbar-left" role="search">
-  <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search" ng-model="input.url">
-  </div>
-  <button type="button" class="btn btn-default" ng-click="click()">Search</button>
-  <button type="button" class="btn btn-default navbar-btn">Pins</button>
-</form>
 
+<div class = "container">
+	<div class="navbar navbar-warning">
+	  <div class="navbar-header">
+	    <form class="navbar-form navbar-left" role="search">
+  			<div class="form-group">
+   			 <input type="text" class="form-control" placeholder="Search" ng-model="input.url">
+ 				</div>
+  				<button type="button" ng-click="click()"class="btn btn-default">Search</button>
+  				<button href = "#/main" type="button" ng-click="click()"class="btn btn-default">See Pins</button>
 
-<div class="row">
-  <div class="col-md-3" ng-repeat="photo in pins"> 
-    <div href="#" class="thumbnail">
-      <img class="photo" ng-src="{{photo.imgUrl}}"/>
-    </div>
-  </div>
-</div>
-
+			</form>
+	  </div>
+	  <span class="navbar-collapse collapse navbar-warning-collapse">
+	   
+	  </span>
+	  <div id="results">
+		</div>
+	</div>
+</div> <!-- close container -->
 
 <div class="row">
   <div class="col-md-3" ng-repeat="photo in photos"> 
