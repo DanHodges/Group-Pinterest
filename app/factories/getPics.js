@@ -13,5 +13,5 @@ app.factory("getPics", function($q, $http) {
          );  
       });
     }
-  } 
+  };
 });

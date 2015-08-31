@@ -12,12 +12,13 @@ app.controller("pinsNsearch", ["$scope", "getPics", function($scope, getPics){
 			function(data) {
 				console.log("data :", data);
 				var photos = data.photos.photo;
-				photos = photos.filter(function(n){ return n != undefined });
+				photos = photos.filter(function(obj) {
+				    return (obj.url_o !== undefined);
+				});
 				for (var key in photos) {
 					$scope.photos.push(photos[key]);
 				}
-				console.log("$scope.photos :", $scope.photos);
 			}
-		)
-	}
+		);
+	};
 }]);
