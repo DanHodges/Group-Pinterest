@@ -7,6 +7,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/pinsNsearch.html',
         controller: 'pinsNsearch'
       }).
+      when('/main', {
+        templateUrl: 'partials/mainBoard.html',
+        controller: 'mainBoard'
+      }).
       otherwise({
         redirectTo: '/'
       });
