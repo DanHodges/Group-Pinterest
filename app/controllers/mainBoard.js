@@ -1,4 +1,6 @@
 app.controller("mainBoard", ["$scope", "getPics", function($scope, getPics){
+	var ref = new Firebase("https://group-pinterest.firebaseio.com/pins/");
+	$scope.pins = $firebaseArray(ref);
 
 	$scope.input = {
 		url: ''
