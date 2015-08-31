@@ -8,9 +8,9 @@
 </div>
 
 <div class="row">
-  <div class="col-md-3"> 
-    <a href="#" class="thumbnail" ng-repeat="photo in photos">
-      <img class="photo" ng-src="{{photo.url_o}}" />
+  <div class="col-md-3" ng-repeat="photo in photos"> 
+    <a href="#" class="thumbnail"  ng-click="pinIt(photo)">
+      <img class="photo" ng-src="{{photo.url_o}}"/>
     </a>
   </div>
 </div>
