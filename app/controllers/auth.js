@@ -1,7 +1,8 @@
 app.controller("AuthCtrl", 
   ["$scope",
   "$firebaseAuth",
-  function($scope, $firebaseAuth) {
+  "getUid",
+  function($scope, $firebaseAuth, getUid) {
     var ref = new Firebase("https://group-pinterest.firebaseio.com/pins");
     $scope.myValue = false;
     ref.authWithOAuthPopup("github", function(error, authData) {
@@ -10,6 +11,7 @@ app.controller("AuthCtrl",
         $scope.myValue = true;
       } else {
         console.log("Authenticated successfully with payload:", authData);
+        getUid.addUid(authData.uid);
       }
     });
 }]);
