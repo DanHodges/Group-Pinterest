@@ -11,5 +11,5 @@ app.factory("getStorage", function() {
       console.log("bucket :", bucket);
       return bucket;
     }
-  }
+  };
 });
