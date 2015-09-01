@@ -16,7 +16,7 @@
           </button>
           <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
             <li role="menuitem" ng-repeat="photo in pins">
-              <a href="#/" ng-click="filters.cat = photo.cat">{{photo.cat}}</a>
+              <a href="#/" ng-click="filters.cat = photo.cat | unique:'cat'">{{photo.cat}}</a>
             </li>
             <li>
               <a href="#/" ng-click="filters.cat = ''">View All</a>
@@ -39,7 +39,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-3" ng-repeat="photo in photos | filter:searchText"> 
+  <div class="col-md-3" ng-repeat="photo in photos"> 
     <div href="#" class="thumbnail"  ng-click="pinIt(photo)">
       <img class="photo" ng-src="{{photo.url_o}}"/>
     </div>
