@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "angular": "~1.4.4",
+    "angular-bootstrap": "~0.13.3",
     "angular-filter": "~0.5.5",
     "angular-route": "~1.4.4",
     "angularfire": "~1.1.2",
