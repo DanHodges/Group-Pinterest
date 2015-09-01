@@ -1,4 +1,4 @@
-<div class="navbar navbar-warning">
+ <div class="navbar navbar-warning">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-warning-collapse">
       <span class="icon-bar"></span>
@@ -15,7 +15,7 @@
             My Boards <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
-            <li role="menuitem" ng-repeat="photo in pins">
+            <li role="menuitem" ng-repeat="photo in pins | unique:'cat'">
               <a href="#/" ng-click="filters.cat = photo.cat">{{photo.cat}}</a>
             </li>
             <li>
@@ -40,8 +40,15 @@
 
 <div class="row">
   <div class="col-md-3" ng-repeat="photo in photos"> 
-    <div href="#" class="thumbnail"  ng-click="pinIt(photo)">
+    <div href="#" class="thumbnail"  ng-click="showInput(this)">
       <img class="photo" ng-src="{{photo.url_o}}"/>
+      <div class="catDiv" ng-show="catValue">
+        <label>Category:</label>
+        <input type="text" ng-model="photo.catInput"></input>
+        <label>Caption:</label>
+        <input type="text" ng-model="photo.captionInput"></input>
+        <button class="button" ng-click="pinIt(photo)">Pin It</button>
+      </div>
     </div>
   </div>
 </div>

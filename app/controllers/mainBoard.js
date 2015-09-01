@@ -32,4 +32,6 @@ app.controller("mainBoard", ["$scope","$firebaseArray", "getPics","getStorage", 
 		console.log("click");
 		$scope.pins.$remove(pin);
 	};
+
+  
 }]);
