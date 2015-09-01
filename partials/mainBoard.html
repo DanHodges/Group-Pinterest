@@ -44,9 +44,11 @@
   <div class="col-md-3" ng-repeat="photo in pins | filter:filters | filter:searchText"> 
     <div href="#/" class="thumbnail">
       <img class="photo" ng-src="{{photo.imgUrl}}"/>
+      <p>{{photo.caption}}</p>
+      <p>{{photo.cat}}</p>
+      <button type="button" class="btn btn-default btn-sm" ng-click="killPin(photo)">Unpin</button>
+      <button type="button" class="btn btn-default btn-sm" <a ng-href="{{photo.searchUrl}}" target="_blank"> Trace Image</a></button>
     </div>
-    <a ng-href="{{photo.searchUrl}}" target="_blank"> Trace Image</a>
-    <button ng-click="killPin(photo)">UnPin</button>
   </div>
 </div>
 

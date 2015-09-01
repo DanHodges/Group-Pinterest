@@ -1,4 +1,4 @@
-app.controller("pinsNsearch", ["$scope","$firebaseArray", "getPics", "getStorage", function($scope, $firebaseArray, getPics, getStorage){
+app.controller("pinsNsearch", ["$scope","$firebaseArray", "getPics", "getStorage", "getUid", function($scope, $firebaseArray, getPics, getStorage, getUid){
 	var ref = new Firebase("https://group-pinterest.firebaseio.com/pins/");
 	$scope.pins = $firebaseArray(ref);
 
@@ -18,13 +18,17 @@ app.controller("pinsNsearch", ["$scope","$firebaseArray", "getPics", "getStorage
 		);
 	}());
 
+
 	$scope.pinIt = function(photo) {
+		var uid = getUid.getUid();
+	  console.log(uid);
 		console.log("photo:", photo);
 		var pinItem = {
 			imgUrl: photo.url_o,
 			cat: '', 
 			searchUrl: "https://www.google.com/searchbyimage?&image_url=" + photo.url_o,
-			caption: ""
+			caption: "",
+			uid: uid
 		};
 		console.log("photo :", photo);
 		$scope.pins.$add(pinItem);
