@@ -1,4 +1,4 @@
-app.controller("pinsNsearch", ["$scope","$firebaseArray", "getPics", "getStorage", "getUid", function($scope, $firebaseArray, getPics, getStorage, getUid){
+app.controller("pinsNsearch", ["$scope","$firebaseArray", "getPics", "getStorage", function($scope, $firebaseArray, getPics, getStorage){
 	var ref = new Firebase("https://group-pinterest.firebaseio.com/pins/");
 	$scope.pins = $firebaseArray(ref);
 	$scope.catValue = false;
