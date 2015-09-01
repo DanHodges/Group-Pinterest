@@ -15,8 +15,8 @@
             My Boards <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
-            <li role="menuitem" ng-repeat="photo in pins">
-              <a href="#/" ng-click="filters.cat = photo.cat | unique:'cat'">{{photo.cat}}</a>
+            <li role="menuitem" ng-repeat="photo in pins | unique:'cat'">
+              <a href="#/" ng-click="filters.cat = photo.cat">{{photo.cat}}</a>
             </li>
             <li>
               <a href="#/" ng-click="filters.cat = ''">View All</a>
