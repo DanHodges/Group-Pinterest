@@ -1,33 +1,44 @@
-<div class = "container">
-  <div class="navbar navbar-warning">
+<div class="navbar navbar-warning">
     <div class="navbar-header">
-      <form class="navbar-form navbar-left" role="search">
-       
-        <button type="button" ng-click= "changeView(pinsNsearch)"class="btn btn-default">New Search</button>
-      </form>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-warning-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)">NSSinTrest</a>
     </div>
-    <span class="navbar-collapse collapse navbar-warning-collapse">
-      <form class="navbar-form navbar-left">
-        <select ng-model="catSelector"> <!-- ng-options= "pin.cat for pin in pins" -->
-          <option>Category1</option>
-          <option>Category2</option>
-          <option>Category3</option>
-        </select>
-        <input class = "filterText" type = "text" placeholder = "Filter Categories"/>
-      </form>
-    </span>
-    <div id="results">
-    </div>
-  </div>
+    <div class="navbar-collapse collapse navbar-warning-collapse">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <div class="btn-group" dropdown is-open="status.isopen">
+                <button id="single-button" type="button" class="btn btn-primary" dropdown-toggle ng-disabled="disabled">
+                  My Boards <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+                  <li role="menuitem" ng-repeat="photo in pins"><a href="#/" ng-click="filters.cat = photo.cat">{{photo.cat}}</a></li>
+                  <li><a href="#/" ng-click="filters.cat = ''">View All</a></li>
+                </ul>
+              </div>
+            </li>
+        </ul>
 
-</div> <!-- close container -->
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-form navbar-left">
+                  <input type="text" class="form-control col-lg-8" placeholder="Search" ng-model="searchTerm" >
+              </form>
+            </li>
+            <li><a id="searchTerm" ng-click="setTerm()" href="/#/search">search</a></li>
+        </ul>
+    </div>
+</div>
+
+
 <div class="row">
-  <div class="col-md-3" ng-repeat="photo in pins"> 
-    <a href="#" class="thumbnail">
+  <div class="col-md-3" ng-repeat="photo in pins | filter:filters"> 
+    <div href="#/" class="thumbnail">
       <img class="photo" ng-src="{{photo.imgUrl}}"/>
-    </a>
-  <div class = "caption" ng-repeat= "caption in pins"> {{pins.caption}}</div>
-  <div class ="category" ng-repeat= "category in pins"> {{pins.cat}}</div>
+    </div>
   </div>
 </div>
 
