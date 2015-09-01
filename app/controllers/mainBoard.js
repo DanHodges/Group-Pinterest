@@ -1,12 +1,12 @@
 app.controller("mainBoard", ["$scope","$firebaseArray", "getPics","getStorage", function($scope, $firebaseArray, getPics, getStorage){
 	var ref = new Firebase("https://group-pinterest.firebaseio.com/pins/");
+
 	$scope.pins = $firebaseArray(ref);
+
 	$scope.filters = {};
 
 	$scope.setTerm = function () {
-		console.log("click");
 		getStorage.addTerm($scope.searchTerm);
-		console.log("getStorage.getTerm() :", getStorage.getTerm());
 	};
 
 	$scope.killSong = function(pin) {
@@ -22,4 +22,9 @@ app.controller("mainBoard", ["$scope","$firebaseArray", "getPics","getStorage", 
     $event.stopPropagation();
     $scope.status.isopen = !$scope.status.isopen;
   };
+
+  $scope.killPin = function(pin) {
+		console.log("click");
+		$scope.pins.$remove(pin);
+	};
 }]);

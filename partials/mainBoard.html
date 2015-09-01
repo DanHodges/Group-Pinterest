@@ -1,36 +1,42 @@
 <div class="navbar navbar-warning">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-warning-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="javascript:void(0)">NSSinTrest</a>
-    </div>
-    <div class="navbar-collapse collapse navbar-warning-collapse">
-        <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <div class="btn-group" dropdown is-open="status.isopen">
-                <button id="single-button" type="button" class="btn btn-primary" dropdown-toggle ng-disabled="disabled">
-                  My Boards <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
-                  <li role="menuitem" ng-repeat="photo in pins"><a href="#/" ng-click="filters.cat = photo.cat">{{photo.cat}}</a></li>
-                  <li><a href="#/" ng-click="filters.cat = ''">View All</a></li>
-                </ul>
-              </div>
-            </li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-warning-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="javascript:void(0)">NSSinTrest</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-warning-collapse">
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <div class="btn-group" dropdown is-open="status.isopen">
+          <button id="single-button" type="button" class="btn btn-primary" dropdown-toggle ng-disabled="disabled">
+            My Boards 
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
             <li>
-              <form class="navbar-form navbar-left">
-                  <input type="text" class="form-control col-lg-8" placeholder="Search" ng-model="searchTerm" >
-              </form>
+              <a href="#/" ng-click="filters.cat = ''">View All</a>
             </li>
-            <li><a id="searchTerm" ng-click="setTerm()" href="/#/search">search</a></li>
-        </ul>
-    </div>
+            <li role="menuitem" ng-repeat="photo in pins">
+              <a href="#/" ng-click="filters.cat = photo.cat">{{photo.cat}}</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <form class="navbar-form navbar-left">
+          <input type="text" class="form-control col-lg-8" ng-model="searchTerm" >
+        </form>
+      </li>
+      <li>
+        <a id="searchTerm" ng-click="setTerm()" href="/#/search">search</a>
+      </li>
+    </ul>
+  </div>
 </div>
 
 
@@ -39,6 +45,8 @@
     <div href="#/" class="thumbnail">
       <img class="photo" ng-src="{{photo.imgUrl}}"/>
     </div>
+    <a ng-href="{{photo.searchUrl}}" target="_blank"> Trace Image</a>
+    <button ng-click="killPin(photo)">UnPin</button>
   </div>
 </div>
 

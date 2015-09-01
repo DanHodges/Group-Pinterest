@@ -19,12 +19,14 @@ app.controller("pinsNsearch", ["$scope","$firebaseArray", "getPics", "getStorage
 	}());
 
 	$scope.pinIt = function(photo) {
+		console.log("photo:", photo);
 		var pinItem = {
 			imgUrl: photo.url_o,
 			cat: '', 
+			searchUrl: "https://www.google.com/searchbyimage?&image_url=" + photo.url_o,
 			caption: ""
 		};
-		// console.log("photo :", photo);
+		console.log("photo :", photo);
 		$scope.pins.$add(pinItem);
 		console.log("$scope.pins :", $scope.pins);
 	};
