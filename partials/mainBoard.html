@@ -19,7 +19,7 @@
             <li>
               <a href="#/" ng-click="filters.cat = ''">View All</a>
             </li>
-            <li role="menuitem" ng-repeat="photo in pins">
+            <li role="menuitem" ng-repeat="photo in pins" ng-options="pin.cat for photo in pins | unique:'cat'">>
               <a href="#/" ng-click="filters.cat = photo.cat">{{photo.cat}}</a>
             </li>
           </ul>
@@ -41,7 +41,7 @@
 
 
 <div class="row">
-  <div class="col-md-3" ng-repeat="photo in pins | filter:filters"> 
+  <div class="col-md-3" ng-repeat="photo in pins | filter:filters | filter:searchText"> 
     <div href="#/" class="thumbnail">
       <img class="photo" ng-src="{{photo.imgUrl}}"/>
     </div>

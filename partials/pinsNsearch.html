@@ -1,4 +1,4 @@
-<div class="navbar navbar-warning">
+ <div class="navbar navbar-warning">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-warning-collapse">
       <span class="icon-bar"></span>
@@ -39,7 +39,7 @@
 </div>
 
 <div class="row">
-  <div class="col-md-3" ng-repeat="photo in photos"> 
+  <div class="col-md-3" ng-repeat="photo in photos | filter:searchText"> 
     <div href="#" class="thumbnail"  ng-click="pinIt(photo)">
       <img class="photo" ng-src="{{photo.url_o}}"/>
     </div>
