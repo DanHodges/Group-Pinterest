@@ -1,14 +1,16 @@
-<div class = "container">
+<!-- Nav bar element finally works -->
+<div class = "container-flex">
   <div class="navbar navbar-warning">
     <div class="navbar-header">
       <form class="navbar-form navbar-left" role="search">
-       
-        <button type="button" ng-click= "changeView(pinsNsearch)"class="btn btn-default">New Search</button>
+      
+        <a href = "/#/"> <button type="button" class="btn btn-default">New Search</button></a>
       </form>
     </div>
     <span class="navbar-collapse collapse navbar-warning-collapse">
       <form class="navbar-form navbar-left">
-        <select ng-model="catSelector"> <!-- ng-options= "pin.cat for pin in pins" -->
+        <select ng-model="catSelector"> <!-- ng-options= "pin.cat for pin in pins" Filter pins by category-->
+
           <option>Category1</option>
           <option>Category2</option>
           <option>Category3</option>
@@ -19,15 +21,20 @@
     <div id="results">
     </div>
   </div>
-
 </div> <!-- close container -->
-<div class="row">
-  <div class="col-md-3" ng-repeat="photo in pins"> 
-    <a href="#" class="thumbnail">
-      <img class="photo" ng-src="{{photo.imgUrl}}"/>
-    </a>
-  <div class = "caption" ng-repeat= "caption in pins"> {{pins.caption}}</div>
-  <div class ="category" ng-repeat= "category in pins"> {{pins.cat}}</div>
-  </div>
-</div>
+<!-- End navbar element -->
 
+
+<div class="row photo">
+<!-- Attempting to show the caption, category and pic together in Main Board. -->
+    <!-- <blockquote>
+      <p ng-repeat = "category in pins">Category: {{pins.cat}}</p>
+      <p ng-repeat = "caption in pins"> {{pins.caption}} </p>
+    </blockquote> -->
+    <div class="col-md-3" ng-repeat="photo in pins"> 
+      <a href="#" class="thumbnail">
+        <img class="photo" ng-src="{{photo.imgUrl}}"/>
+      </a>
+    </div>
+  
+</div>

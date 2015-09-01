@@ -13,4 +13,8 @@ app.controller("mainBoard", ["$scope", "getPics", function($scope, getPics){
 				console.log("data", data);
 			});
 	};
+	$scope.go = function (path) {
+  		$location.path(path);
+};
+
 }]);
