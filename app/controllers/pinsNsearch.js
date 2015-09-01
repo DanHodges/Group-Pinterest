@@ -1,9 +1,9 @@
 app.controller("pinsNsearch", ["$scope","$firebaseArray", "getPics", "getStorage", "getUid", function($scope, $firebaseArray, getPics, getStorage, getUid){
 	var ref = new Firebase("https://group-pinterest.firebaseio.com/pins/");
 	$scope.pins = $firebaseArray(ref);
-	$scope.category = "";
-	$scope.captionInput = "";
 	$scope.catValue = false;
+	$scope.catInput = "";
+	$scope.captionInput = "";
 
 	(function() {
 		$scope.photos = [];
@@ -26,8 +26,9 @@ app.controller("pinsNsearch", ["$scope","$firebaseArray", "getPics", "getStorage
 		}
 	}());
 
-  $scope.showInput = function() {
-  	$scope.catValue = true;
+  $scope.showInput = function(context) {
+  	console.log(context);
+  	context.catValue = true;
   };
 
 	$scope.pinIt = function(photo) {
@@ -35,9 +36,9 @@ app.controller("pinsNsearch", ["$scope","$firebaseArray", "getPics", "getStorage
 		console.log("photo:", photo);
 		var pinItem = {
 			imgUrl: photo.url_o,
-			cat: '', 
+			cat: photo.catInput, 
 			searchUrl: "https://www.google.com/searchbyimage?&image_url=" + photo.url_o,
-			caption: "",
+			caption: photo.captionInput,
 			uid: uid
 		};
 		console.log("photo :", photo);

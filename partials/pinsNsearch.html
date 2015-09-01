@@ -40,13 +40,13 @@
 
 <div class="row">
   <div class="col-md-3" ng-repeat="photo in photos"> 
-    <div href="#" class="thumbnail"  ng-click="showInput()">
+    <div href="#" class="thumbnail"  ng-click="showInput(this)">
       <img class="photo" ng-src="{{photo.url_o}}"/>
       <div class="catDiv" ng-show="catValue">
         <label>Category:</label>
-        <input class="catInput"></input>
+        <input type="text" ng-model="photo.catInput"></input>
         <label>Caption:</label>
-        <input class="captionInput"></input>
+        <input type="text" ng-model="photo.captionInput"></input>
         <button class="button" ng-click="pinIt(photo)">Pin It</button>
       </div>
     </div>
