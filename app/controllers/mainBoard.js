@@ -1,4 +1,4 @@
-app.controller("mainBoard", ["$scope","$firebaseArray", "getPics","getStorage", function($scope, $firebaseArray, getPics, getStorage){
+app.controller("mainBoard", ["$scope","$firebaseArray", "getPics","getStorage", "getUid", function($scope, $firebaseArray, getPics, getStorage, getUid){
 	var ref = new Firebase("https://group-pinterest.firebaseio.com/pins/");
 
 	$scope.pins = $firebaseArray(ref);
@@ -32,4 +32,6 @@ app.controller("mainBoard", ["$scope","$firebaseArray", "getPics","getStorage", 
 		console.log("click");
 		$scope.pins.$remove(pin);
 	};
+
+  
 }]);

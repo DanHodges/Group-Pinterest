@@ -24,6 +24,20 @@
             </li>
           </ul>
         </div>
+        <div class="btn-group" dropdown>
+          <button id="single-button" type="button" class="btn btn-primary" dropdown-toggle ng-disabled="disabled">
+            My Pins
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+            <li>
+              <a href="#/" ng-click="filters.uid = ''">View All</a>
+            </li>
+            <li role="menuitem" ng-repeat="photo in pins | unique:'uid'">
+              <a href="#/" ng-click="filters.uid = photo.uid" >{{photo.uid}}</a>
+            </li>
+          </ul> 
+        </div>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
