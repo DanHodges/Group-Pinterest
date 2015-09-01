@@ -17,6 +17,11 @@ app.controller("mainBoard", ["$scope","$firebaseArray", "getPics","getStorage", 
     isopen: false
   };
 
+  $scope.status = {
+    isFirstOpen: true,
+    isFirstDisabled: false
+  };
+
   $scope.toggleDropdown = function($event) {
     $event.preventDefault();
     $event.stopPropagation();
