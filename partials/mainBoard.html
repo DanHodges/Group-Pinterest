@@ -54,14 +54,21 @@
 </div>
 
 
-<div class="row">
-  <div class="col-md-3" ng-repeat="photo in pins | filter:filters | filter:searchTerm"> 
-    <div href="#/" class="thumbnail">
+<div id="wrapper">
+  <div id="columns"> 
+    <div href="#/" class="pin" ng-repeat="photo in pins | filter:filters | filter:searchTerm">
       <img class="photo" ng-src="{{photo.imgUrl}}"/>
       <p>{{photo.caption}}</p>
       <p>{{photo.cat}}</p>
       <button type="button" class="btn btn-default btn-sm" ng-click="killPin(photo)">Unpin</button>
-      <button type="button" class="btn btn-default btn-sm" <a ng-href="{{photo.searchUrl}}" target="_blank"> Trace Image</a></button>
+      <a type="button" class="btn btn-default btn-sm" ng-href="{{photo.searchUrl}}" target="_blank">Trace Image</a>
+      <div class="catDiv" ng-show="catValue">
+        <label>Category:</label>
+        <input type="text" ng-model="photo.catInput"></input>
+        <label>Caption:</label>
+        <input type="text" ng-model="photo.captionInput"></input>
+        <button class="button" ng-click="pinIt(photo)">Pin It</button>
+      </div>
     </div>
   </div>
 </div>

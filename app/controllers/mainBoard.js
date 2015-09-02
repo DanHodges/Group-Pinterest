@@ -2,7 +2,7 @@ app.controller("mainBoard", ["$scope","$firebaseArray", "getPics","getStorage", 
 	var ref = new Firebase("https://group-pinterest.firebaseio.com/pins/");
 
 	$scope.pins = $firebaseArray(ref);
-
+	console.log("$scope.pins :", $scope.pins);
 	$scope.filters = {};
 
 	$scope.setTerm = function () {
