@@ -38,9 +38,9 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-3" ng-repeat="photo in photos"> 
-    <div href="#" class="thumbnail"  ng-click="showInput(this)">
+<div id="wrapper">
+  <div id="columns"> 
+    <div href="#" class="pin" class="thumbnail"  ng-click="showInput(this)" ng-repeat="photo in photos">
       <img class="photo" ng-src="{{photo.url_o}}"/>
       <div class="catDiv" ng-show="catValue">
         <label>Category:</label>
