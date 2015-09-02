@@ -34,6 +34,8 @@ app.controller("mainBoard", ["$scope","$firebaseArray", "getPics","getStorage", 
     console.log(photo);
     photo.caption = photo.caption;
     photo.cat = photo.cat;
+    $scope.pins.$save(photo);
+    photo.showBoolean = true;
   };
 
   $scope.toggleDropdown = function($event) {

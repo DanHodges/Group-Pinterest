@@ -64,7 +64,7 @@
       <p ng-click="showInput(photo)" ng-show="showBoolean">{{photo.cat}}</p>
       <label ng-hide="showBoolean">Category:</label>
       <input type="text" ng-hide="showBoolean" ng-model="photo.cat"></input>
-      <button type="button" class="btn btn-default btn-sm" ng-hide="showBoolean" ng-click="saveData(photo)">Save</button>
+      <button type="submit" class="btn btn-default btn-sm" ng-hide="showBoolean" ng-click="saveData(photo); showInput(this)">Save</button>
       <button type="button" class="btn btn-default btn-sm" ng-click="killPin(photo)">Unpin</button>
       <a type="button" class="btn btn-default btn-sm" ng-href="{{photo.searchUrl}}" target="_blank">Trace Image</a>
       <div class="catDiv" ng-show="catValue">
