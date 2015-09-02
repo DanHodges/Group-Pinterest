@@ -1,6 +1,8 @@
 app.controller("mainBoard", ["$scope","$firebaseArray", "getPics","getStorage", function($scope, $firebaseArray, getPics, getStorage){
 	var ref = new Firebase("https://group-pinterest.firebaseio.com/pins/");
 
+  $scope.showBoolean = true;
+
 	$scope.pins = $firebaseArray(ref);
 
 	$scope.filters = {};
@@ -20,6 +22,18 @@ app.controller("mainBoard", ["$scope","$firebaseArray", "getPics","getStorage", 
   $scope.status = {
     isFirstOpen: true,
     isFirstDisabled: false
+  };
+
+  $scope.showInput = function(context) {
+    console.log("click");
+    context.showBoolean = false;
+  };
+
+  $scope.saveData = function(photo) {
+    console.log("click");
+    console.log(photo);
+    photo.caption = photo.caption;
+    photo.cat = photo.cat;
   };
 
   $scope.toggleDropdown = function($event) {
