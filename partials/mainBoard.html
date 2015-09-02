@@ -58,8 +58,13 @@
   <div id="columns"> 
     <div href="#/" class="pin" ng-repeat="photo in pins | filter:filters | filter:searchTerm">
       <img class="photo" ng-src="{{photo.imgUrl}}"/>
-      <p>{{photo.caption}}</p>
-      <p>{{photo.cat}}</p>
+      <p ng-click="showInput(this)" ng-show="showBoolean">{{photo.caption}}</p>
+      <label ng-hide="showBoolean">Caption:</label>
+      <input type="text" ng-hide="showBoolean" ng-model="photo.caption"></input>
+      <p ng-click="showInput(photo)" ng-show="showBoolean">{{photo.cat}}</p>
+      <label ng-hide="showBoolean">Category:</label>
+      <input type="text" ng-hide="showBoolean" ng-model="photo.cat"></input>
+      <button type="button" class="btn btn-default btn-sm" ng-hide="showBoolean" ng-click="saveData(photo)">Save</button>
       <button type="button" class="btn btn-default btn-sm" ng-click="killPin(photo)">Unpin</button>
       <a type="button" class="btn btn-default btn-sm" ng-href="{{photo.searchUrl}}" target="_blank">Trace Image</a>
       <div class="catDiv" ng-show="catValue">
