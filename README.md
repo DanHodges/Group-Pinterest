@@ -1,5 +1,5 @@
 #NSS Group Project:  Group Pinterest
-An NSS group project with contributions from @tannert44, @shelleydaviswise, and @dan-hodges.  This app was a project to look into how one would make a pinterest-like app with the following technologies.
+An NSS group project with contributions from @tannert44, @shelleydaviswise, and @danhodges.  This app was a project to look into how one would make a pinterest-like app with the following technologies.
 
 ###Technologies used:
 1. RequireJS
